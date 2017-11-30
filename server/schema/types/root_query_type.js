@@ -3,7 +3,9 @@ const { GraphQLObjectType } = graphql;
 
 const RootQueryType = new GraphQLObjectType({
   name: 'RootQueryType',
-  fields: { type: GraphQLID }
+  fields: {
+    dummyField: { type: GraphQLID }
+  }
 });
 
 module.exports = RootQueryType;
