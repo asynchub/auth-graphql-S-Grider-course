@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 
 class AuthForm extends Component {
-  constructor() {
+  constructor(props) {
     super(props);
+    this.state = {
+      email: '',
+      password: ''
+    };
   }
   
   render() {
     return (
-      <div>
-        AuthForm
-      </div>
+      <form>
+      </form>
     );
   }
 
