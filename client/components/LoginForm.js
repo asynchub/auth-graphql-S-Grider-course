@@ -10,6 +10,7 @@ class LoginForm extends Component {
   render() {
     return (
       <div>
+        <h4>Login</h4>
         <AuthForm />
       </div>
     );
