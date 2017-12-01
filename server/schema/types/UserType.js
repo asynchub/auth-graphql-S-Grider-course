@@ -1,12 +1,12 @@
-import { graphql } from 'graphql';
-import {
+const graphql = require('graphql');
+const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLID
-} from 'graphql';
+} = graphql;
 
 const UserType = new GraphQLObjectType({
-  name = 'UserType',
+  name : 'UserType',
   fields: {
     id: { type: GraphQLID },
     email: { type: GraphQLString }

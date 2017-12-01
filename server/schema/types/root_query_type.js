@@ -1,16 +1,17 @@
 const graphql = require('graphql');
-const { GraphQLObjectType } = graphql;
+const { GraphQLObjectType, GraphQLID } = graphql;
+
+const UserType = require('./UserType');
 
 const RootQueryType = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
-    user: { 
+    user: {
       type: UserType,
       resolve(parentValue, args, req) {
-        return req.user;
+        return req.user; // user property by passportjs
       }
     }
-    
   }
 });
 

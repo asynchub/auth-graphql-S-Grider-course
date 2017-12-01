@@ -1,8 +1,8 @@
-import { graphql } from 'graphql';
-import {
+const graphql = require('graphql');
+const {
   GraphQLObjectType,
   GraphQLString
-} from 'graphql';
+} = graphql;
 
 const UserType = require('./types/UserType');
 const AuthService = require('../services/auth');
