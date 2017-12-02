@@ -3,18 +3,16 @@ import { graphql } from 'react-apollo';
 import { hashHistory } from 'react-router';
 
 import AuthForm from './AuthForm';
-import mutation from '../mutations/Login';
+import mutation from '../mutations/Signup';
 import query from '../queries/CurrentUser';
 
-class LoginForm extends Component {
+class SignupForm extends Component {
   constructor(props) {
     super(props);
     this.state = { errors: [] };
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
   componentWillUpdate(nextProps) {
-    // console.log(this.props, nextProps);
     if (nextProps.data.user && !this.props.data.user) {
       hashHistory.push('/dashboard');
     }
@@ -31,12 +29,11 @@ class LoginForm extends Component {
   }
 
   render() {
-    // console.log(this.props.mutate);
     return (
       <div>
-        <h4>Login</h4>
+        <h4>Signup</h4>
         <AuthForm
-        onSubmit={this.onSubmit}
+        onSubmit={this.onSubmit.bind(this)}
         errors={this.state.errors}
         />
       </div>
@@ -45,5 +42,5 @@ class LoginForm extends Component {
 }
 
 export default graphql(query)(
-  graphql(mutation)(LoginForm)
-); // query will rerender component, if it's res is updated on this.props.data
+  graphql(mutation)(SignupForm)
+);

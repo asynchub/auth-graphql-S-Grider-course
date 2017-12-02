@@ -6,20 +6,21 @@ import query from '../queries/CurrentUser';
 import mutation from '../mutations/Logout';
 
 class Header extends Component {
-  
+
   onLogout() {
     this.props.mutate({
       refetchQueries: [{ query }] // this updates this.props.data and makes component to rerender
-    }); 
+    });
   }
-  
+
   renderButtons() {
     const { loading, user } = this.props.data; // res of query is always in this.props.data
     if (loading) { return <div /> }
     if (user) {
+      // <a> just to use same style as Link has
       return (
         <li>
-          <a onClick={this.onLogout.bind(this)}> // a just to use same style as Link has
+          <a onClick={this.onLogout.bind(this)}>
             Logout
           </a>
         </li>
